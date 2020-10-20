@@ -33,16 +33,10 @@ class dissertationReport extends reviewableAssessments
 			/* Domain-specific fields */
 			`title` mediumtext COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Provisional title',
 			`projectDescription` mediumtext COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Description',
-			`subject` enum('','Human Geography', 'Physical Geography','Human and Physical combined') COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Subject area',
-			`topic` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Topic',
+			`subject` enum('','Physical Geography', 'Human Geography','Physical and Human areas combined') COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Subject area',
 			`supervisors` mediumtext COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Supervisors so far',
-			`furtherSupervisors` mediumtext COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Further supervision',
-			`helpTechniques` enum('','Yes','No') COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Help (fieldwork and laboratory techniques)',
-			`helpTechniquesDetails` mediumtext COLLATE utf8mb4_unicode_ci COMMENT 'Help (fieldwork and laboratory techniques) - details',
-			`helpEquipment` enum('','Yes','No') COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Help (equipment)',
-			`helpEquipmentDetails` mediumtext COLLATE utf8mb4_unicode_ci COMMENT 'Help (equipment) - details',
-			`helpField` enum('','Yes','No') COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Help (field data)',
-			`helpFieldDetails` mediumtext COLLATE utf8mb4_unicode_ci COMMENT 'Help (field data) - details',
+			`helpData` enum('','Yes','No') COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Help (fieldwork and laboratory techniques)',
+			`helpDataDetails` mediumtext COLLATE utf8mb4_unicode_ci COMMENT 'Help (fieldwork and laboratory techniques) - details',
 			`helpModelling` enum('','Yes','No') COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Help (modelling)',
 			`helpModellingDetails` mediumtext COLLATE utf8mb4_unicode_ci COMMENT 'Help (modelling) - details',
 			`helpImagery` enum('','Yes','No') COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Help (imagery)',
@@ -61,7 +55,7 @@ class dissertationReport extends reviewableAssessments
 		$html .= '
 		<br />
 		<h4>A. Provisional dissertation title:</h4>
-		<p>The title of your dissertation should indicate clearly and accurately the nature and topic of your dissertation. This title should be agreed with your Director of Studies. Subtle changes of wording in the title of the final submitted dissertation, or the addition of a short subtitle which reflects more specifically the nature of the work, will not be penalised by the Part II Examination Board.</p>
+		<p>The title of your dissertation should indicate clearly and accurately the nature and topic of your dissertation. This title should be agreed with your Dissertation Supervisor. Subtle changes of wording in the title of the final submitted dissertation, or the addition of a short subtitle which reflects more specifically the nature of the work, will not be penalised by the Part II Examination Board.</p>
 		<p>{title}</p>
 		
 		<br />
@@ -70,52 +64,30 @@ class dissertationReport extends reviewableAssessments
 		<p>{projectDescription}</p>
 		
 		<br />
-		<h4>C. Chose a subject area your dissertation topic applies to:</h4>
+		<h4>C. Identify a subject area your dissertation topic applies to:</h4>
+		<ul>
+			<li>Physical Geography areas (e.g. Coastal, Climate and Pollution, Natural Hazards, Quaternary etc.)</li>
+			<li>Human Geography areas (e.g. Urban, Economic, Cultural, Historical Geography etc.)</li>
+			<li>Physical and Human areas combined (e.g. Environmental Management, Environment and Society etc.)</li>
+		</ul>
 		<p>{subject}</p>
 		
 		<br />
-		<h4>D. Specify what topic it applies to:</h4>
-		<p>E.g. Coastal, Climate and Pollution, Natural Hazards, Quaternary; Urban, Economic, Cultural, Historical Geography; Environmental Management, Environment and Society, etc.</p>
-		<p>{topic}</p>
-		
-		<br />
-		<h4>E. List all the supervisors you have received substantial (30 minutes or more combined at either Part IB or the early Michaelmas Term Part II) supervision from:</h4>
-		<p>Each student is allowed 4 hours of formal dissertation supervision across Parts IB and II. If a student changes his/her topic after submitting the dissertation proposal (plus Risk Assessment and Ethics forms) in the Lent term, then the clock can be reset for the number of dissertation hours allowed.</p>
+		<h4>D. Name of your Dissertation Supervisor:</h4>
+		<p>If you have seen or are anticipating seeing more than one person (e.g. your original supervisor has left the Department or gone on sabbatical) since the Easter Term 2020 please give both names. Please also list anyone else who your supervisor may have arranged for you to see. Each student is allowed 4 hours of formal dissertation supervision at Part II.</p>
 		<p>{supervisors}</p>
 		
 		<br />
-		<h4>F. List all the supervisors you hope/expect to meet for further supervision:</h4>
-		<p>{furtherSupervisors}</p>
-		
-		<br />
-		<h4>G. Technical help - Have you received:</h4>
+		<h4>E. Technical help - Have you received any of the following (this is in addition to any help from your Dissertation Supervisor):</h4>
 		
 		<table class="graybox questionnaire">
 			
 			<tr>
-				<td>&hellip; Instruction in fieldwork and laboratory techniques to ensure safe and appropriate data collection?</td>
+				<td>&hellip; Training or advice in use of online data sets and their analyses?</td>
 				<td>
-					{helpTechniques}<br />
+					{helpData}<br />
 					<p>If Yes give details, e.g. what and from whom:</p>
-					{helpTechniquesDetails}
-				</td>
-			</tr>
-			
-			<tr>
-				<td>&hellip; Technical training for the operation of field and laboratory equipment to ensure safe and appropriate data collection?</td>
-				<td>
-					{helpEquipment}<br />
-					<p>If Yes give details, e.g. what and from whom:</p>
-					{helpEquipmentDetails}
-				</td>
-			</tr>
-			
-			<tr>
-				<td>&hellip; Advice on technical apparatus for measuring and logging field data remotely?</td>
-				<td>
-					{helpField}<br />
-					<p>If Yes give details, e.g. what and from whom:</p>
-					{helpFieldDetails}
+					{helpDataDetails}
 				</td>
 			</tr>
 			
