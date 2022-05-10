@@ -31,16 +31,16 @@ class dissertationReport extends reviewableAssessments
 		# Return the SQL
 		return $sql = "
 			/* Domain-specific fields */
-			`title` mediumtext COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Provisional title',
-			`projectDescription` mediumtext COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Description',
-			`subject` enum('','Physical Geography', 'Human Geography','Physical and Human areas combined') COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Subject area',
-			`supervisors` mediumtext COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Supervisors so far',
-			`helpData` enum('','Yes','No') COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Help (fieldwork and laboratory techniques)',
-			`helpDataDetails` mediumtext COLLATE utf8mb4_unicode_ci COMMENT 'Help (fieldwork and laboratory techniques) - details',
-			`helpModelling` enum('','Yes','No') COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Help (modelling)',
-			`helpModellingDetails` mediumtext COLLATE utf8mb4_unicode_ci COMMENT 'Help (modelling) - details',
-			`helpImagery` enum('','Yes','No') COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Help (imagery)',
-			`helpImageryDetails` mediumtext COLLATE utf8mb4_unicode_ci COMMENT 'Help (imagery) - details',
+			`title` mediumtext NOT NULL COMMENT 'Provisional title',
+			`projectDescription` mediumtext NOT NULL COMMENT 'Description',
+			`subject` enum('','Physical Geography', 'Human Geography','Physical and Human areas combined') NOT NULL COMMENT 'Subject area',
+			`supervisors` mediumtext NOT NULL COMMENT 'Supervisors so far',
+			`helpData` enum('','Yes','No') NOT NULL COMMENT 'Help (fieldwork and laboratory techniques)',
+			`helpDataDetails` mediumtext COMMENT 'Help (fieldwork and laboratory techniques) - details',
+			`helpModelling` enum('','Yes','No') NOT NULL COMMENT 'Help (modelling)',
+			`helpModellingDetails` mediumtext COMMENT 'Help (modelling) - details',
+			`helpImagery` enum('','Yes','No') NOT NULL COMMENT 'Help (imagery)',
+			`helpImageryDetails` mediumtext COMMENT 'Help (imagery) - details',
 		";
 	}
 	
