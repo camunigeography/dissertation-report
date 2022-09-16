@@ -31,6 +31,7 @@ class dissertationReport extends reviewableAssessments
 		# Return the SQL
 		return $sql = "
 			/* Domain-specific fields */
+			
 			`title` mediumtext NOT NULL COMMENT 'Provisional title',
 			`projectDescription` mediumtext NOT NULL COMMENT 'Description',
 			`subject` enum('','Physical Geography', 'Human Geography','Physical and Human areas combined') NOT NULL COMMENT 'Subject area',
