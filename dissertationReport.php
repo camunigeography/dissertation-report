@@ -1,7 +1,6 @@
 <?php
 
 # Class implementing a research dissertation report form system
-require_once ('reviewable-assessments/reviewableAssessments.php');
 class dissertationReport extends reviewableAssessments
 {
 	# Function to assign defaults additional to the general application defaults

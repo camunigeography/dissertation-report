@@ -1,0 +1,13 @@
+{
+    "name": "camunigeography/dissertation-report",
+    "description": "Dissertation report form system",
+    "type": "project",
+    "license": "GPL-3.0-only",
+    "minimum-stability": "stable",
+    "require": {
+        "camunigeography/reviewable-assessments": "^1.0"
+    },
+    "autoload": {
+        "files": ["dissertationReport.php"]
+    }
+}
