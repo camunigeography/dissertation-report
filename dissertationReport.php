@@ -53,12 +53,18 @@ class dissertationReport extends reviewableAssessments
 		<p>{subject|enum('','Human Geography','Physical Geography','Human and Physical combined')|Subject area}</p>
 		
 		<br />
-		<h4>D. Name of your Dissertation Supervisor:</h4>
+		<h4>D. Fieldwork location:</h4>
+		<p>Where was the location of your fieldwork?</p>
+		<p>Fieldwork country:<br />{fieldworkCountry|varchar(255)|Fieldwork country}</p>
+		<p>Fieldwork city/town/area:<br />{fieldworkArea|varchar(255)|Fieldwork area}</p>
+		
+		<br />
+		<h4>E. Name of your Dissertation Supervisor:</h4>
 		<p>If you have seen or are anticipating seeing more than one person (e.g. your original supervisor has left the Department or gone on sabbatical) since the Easter Term 2020 please give both names. Please also list anyone else who your supervisor may have arranged for you to see. Each student is allowed 4 hours of formal dissertation supervision at Part II.</p>
 		<p>{supervisors|mediumtext|Supervisors so far}</p>
 		
 		<br />
-		<h4>E. Technical help - Have you received any of the following (this is in addition to any help from your Dissertation Supervisor):</h4>
+		<h4>F. Technical help - Have you received any of the following (this is in addition to any help from your Dissertation Supervisor):</h4>
 		
 		<table class=\"graybox questionnaire\">
 			
